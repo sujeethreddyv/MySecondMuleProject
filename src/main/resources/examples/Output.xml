@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<covidcase>
+	<firstName>John</firstName>
+	<lastanme>Nixon</lastanme>
+	<phone>9160888882</phone>
+	<email>sujeethreddy.v@gmail.com</email>
+	<dateOfBirth>1989-04-26</dateOfBirth>
+	<country>USA</country>
+</covidcase>
