@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
+	<flow name="DW_TestingFlow" doc:id="e5811257-8e58-455f-a130-bb0a0cdc5332" >
+		<ee:transform doc:name="Transform Message" doc:id="82b717cc-cf49-4184-be47-586ad08b525a" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+var a = [1,2,3]
+var x = [4,5,6]
+var b = [{name :"Sujeeth"},{lastname:"Reddy"}]
+var c = {"Id":2}
+var d = [a,b]
+var z = [a,x]
+---
+a
+
+]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<ee:transform doc:name="Transform Message" doc:id="92974bae-8dd7-467f-854e-e010feb9b082" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+var a = [1,2,3]
+var x = [4,5,6]
+var b = [{name :"Sujeeth"},{lastname:"Reddy"}]
+var c = {"Id":2}
+var d = [a,b]
+var z = [a,x]
+---
+flatten([a,b.name])]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<ee:transform doc:name="Transform Message" doc:id="925e190e-cb89-437d-b210-b5ced04bf73c" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+%dw 2.0
+var myObject = { "myKey" : "1234", "name" : "somebody" }
+var myArray = [ { "myKey" : "1234" }, { "name" : "somebody" } ]
+output application/json
+---
+{
+    selectingValueUsingKeyInObject : myObject.name,
+    selectingValueUsingKeyOfObjectInArray : myArray.name,
+}
+]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+	</flow>
+</mule>

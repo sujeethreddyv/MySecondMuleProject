@@ -1,0 +1,18 @@
+{
+    "source":"Hospital1",
+    "caseType":"postive",
+    "firstName":"John",
+    "lastanme":"Nixon",
+    "phone":"9160888882",
+    "email":"sujeethreddy.v@gmail.com",
+    "dateOfBirth":"1989-04-26",
+    "nationalID":"rawIndian",
+    "nationalIDTytpe":"SSN",
+    "address":{
+        "streetAddress":"1600 Pennylvania Avenue NW",
+        "city":"Washington",
+        "state":"DC",
+        "postal":"50018",
+        "country":"USA"
+    }
+}
